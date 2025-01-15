@@ -32,3 +32,10 @@ class BankAccount {
         return $this->balance;
     }
 }
+$account = new BankAccount(100);
+
+$account->deposit(50);
+$account->withdraw(30);
+$account->withdraw(150);
+
+echo "Final balance: " . $account->getBalance() . "\n";

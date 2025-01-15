@@ -25,3 +25,22 @@ class Movie {
         return $viewerAge >= $this->ageRestriction;
     }
 }
+$movie = new Movie("Inception", "Sci-Fi", 13);
+
+echo "Title: " . $movie->title . "\n";
+echo "Genre: " . $movie->genre . "\n";
+echo "Age Restriction: " . $movie->ageRestriction . "\n";
+
+$viewerAge = 15;
+if ($movie->canWatch($viewerAge)) {
+    echo "Viewer of age $viewerAge can watch the movie.\n";
+} else {
+    echo "Viewer of age $viewerAge cannot watch the movie.\n";
+}
+
+$viewerAge = 12;
+if ($movie->canWatch($viewerAge)) {
+    echo "Viewer of age $viewerAge can watch the movie.\n";
+} else {
+    echo "Viewer of age $viewerAge cannot watch the movie.\n";
+}

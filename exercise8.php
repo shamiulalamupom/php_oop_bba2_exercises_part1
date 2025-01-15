@@ -27,9 +27,15 @@ class Student extends Person {
 
     public function getAverage(): float {
         if (empty($this->grades)) {
-            return 0.0;
+            return 0;
         }
         $total = array_sum($this->grades);
         return $total / count($this->grades);
     }
 }
+
+$student = new Student([90, 80, 70, 85]);
+var_dump($student->getGrades());
+$student->setGrades([100, 95, 85]);
+
+echo "Average grade: " . $student->getAverage();

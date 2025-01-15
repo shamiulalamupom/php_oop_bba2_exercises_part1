@@ -36,3 +36,12 @@ class ShoppingCart {
         return $this->total;
     }
 }
+
+$cart = new ShoppingCart();
+$cart->addItem("Apple", 1.99);
+$cart->addItem("Banana", 0.99);
+$cart->addItem("Orange", 1.49);
+
+$cart->displayItems();
+
+echo "Total cost: $" . $cart->getTotal();
