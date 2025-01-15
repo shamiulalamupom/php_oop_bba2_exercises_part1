@@ -13,8 +13,9 @@ require_once 'exercise2.php';
 class Student extends Person {
     private array $grades;
 
-    public function __construct(array $grades = []) {
-        $this->grades = $grades;
+    public function __construct(string $first_name, string $last_name, int $age, array $grades = []) {
+        parent::__construct($first_name, $last_name, $age);
+        $this->setGrades($grades);
     }
 
     public function getGrades(): array {
@@ -34,7 +35,8 @@ class Student extends Person {
     }
 }
 
-$student = new Student([90, 80, 70, 85]);
+$student = new Student("Shamiul", "Alam", 24, [90, 80, 70, 85]);
+echo "Full Name: " . $student->displayInfos() . "<br>";
 var_dump($student->getGrades());
 $student->setGrades([100, 95, 85]);
 
